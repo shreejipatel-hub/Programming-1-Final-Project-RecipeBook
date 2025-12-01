@@ -3,5 +3,6 @@
     DESSERT,
     SOUP,
     DINNER,
-    BREAKFAST
+    BREAKFAST,
+    APPETIZER
 }
