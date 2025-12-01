@@ -9,20 +9,34 @@ public class ColdDish extends Recipe
         chillTime = 0;
         isSet = false;
     }
+    
+    public void setChillTime(double time)
+    {
+        this.chillTime = time;
+    }
 
-    public double chill()
+    public double getChillTime()
     {
         return chillTime;
     }
 
     public void checkTexture()
     {
-        System.out.println("Checking texture...");
+        System.out.println("Checking consistency...");
+        this.isSet = true;
     }
 
     @Override
     public void prepare()
     {
         System.out.println("Chilling for " + chillTime + " hours.");
+        //print steps
+        int i = 1;
+        for(String s : steps)
+        {
+            System.out.println(i+ ". "+s);
+            i++;
+        }
+        System.out.println(i + ". Chill for "+ chillTime + " hours.");
     }
 }

@@ -18,7 +18,20 @@ public abstract class Recipe
         this.ingredients = new ArrayList<>();
         this.steps = new ArrayList<>();
         this.rating = 0;
-        this.servingSize = 1;
+        this.servingSize = 1;//serving size set to 1 by default
+    }
+    
+    public void setServingSize(int newSize)
+    {
+        //calculating the ratio
+        double factor = (double) newSize / this.servingSize;
+        //update the number
+        this.servingSize = newSize;
+        //update all ingredients
+        for(Ingredient i :  ingredients)
+        {
+            //i.scale(factor);
+        }
     }
 
     public void addTag(String tag)
@@ -70,12 +83,6 @@ public abstract class Recipe
     {
         return servingSize;
     }
-
-    public void setServingSize(int s)
-    {
-        servingSize = s;
-    }
-
     // ABSTRACT
     public abstract void prepare();
 }

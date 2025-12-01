@@ -9,10 +9,15 @@
         ovenTemp = 0;
         bakeTime = 0;
     }
+    
+    public void setBakeTime(double time)
+    {
+        this.bakeTime = time;
+    }
 
     public void setOvenTemp(double temp)
     {
-        ovenTemp = temp;
+        this.ovenTemp = temp;
     }
 
     public double getBakeTime()
@@ -25,5 +30,13 @@
     {
         System.out.println("Preheating oven to " + ovenTemp);
         System.out.println("Baking for " + bakeTime + " minutes.");
+        //print steps
+        int i = 2;
+        for(String s : steps)
+        {
+            System.out.println(i + ". "+s);
+            i++;
+        }
+        System.out.println(i+ ". bake for "+ bakeTime + " minutes");
     }
 }
