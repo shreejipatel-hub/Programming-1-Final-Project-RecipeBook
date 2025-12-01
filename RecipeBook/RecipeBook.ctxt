@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=RecipeBook
+comment1.params=author\ edition\ yearPublished
+comment1.target=RecipeBook(java.lang.String,\ java.lang.String,\ int)
+comment2.params=r
+comment2.target=void\ addRecipe(Recipe)
+comment3.params=
+comment3.target=java.util.ArrayList\ listAllRecipes()
+comment4.params=type
+comment4.target=java.util.ArrayList\ listByType(RecipeType)
+comment5.params=
+comment5.target=Recipe\ getTopRated()
+comment6.params=
+comment6.target=void\ printBookDetails()
+numComments=7
