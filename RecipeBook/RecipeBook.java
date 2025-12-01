@@ -6,7 +6,7 @@ public class RecipeBook
     private String author;
     private String edition;
     private int yearPublished;
-
+   
     public RecipeBook(String author, String edition, int yearPublished)
     {
         recipes = new ArrayList<>();
@@ -24,7 +24,7 @@ public class RecipeBook
     {
         return recipes;
     }
-
+ 
     public ArrayList<Recipe> listByType(RecipeType type)
     {
         ArrayList<Recipe> out = new ArrayList<>();

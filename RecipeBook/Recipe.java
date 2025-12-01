@@ -9,7 +9,6 @@ public abstract class Recipe
     protected double rating;
     protected RecipeType type;
     protected int servingSize;
-
     public Recipe(String name, RecipeType type)
     {
         this.name = name;
@@ -17,8 +16,9 @@ public abstract class Recipe
         this.tags = new ArrayList<>();
         this.ingredients = new ArrayList<>();
         this.steps = new ArrayList<>();
-        this.rating = 0;
+        this.rating =  rating;
         this.servingSize = 1;//serving size set to 1 by default
+         
     }
     
     public void setServingSize(int newSize)
@@ -38,7 +38,7 @@ public abstract class Recipe
     {
         tags.add(tag);
     }
-
+    
     public boolean hasTag(String tag)
     {
         return tags.contains(tag);
