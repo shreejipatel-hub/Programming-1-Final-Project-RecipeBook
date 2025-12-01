@@ -7,7 +7,7 @@ public class ColdDish extends Recipe
     {
         super(name, type);
         chillTime = 0;
-        isSet = false;
+        this.isSet = false;
     }
     
     public void setChillTime(double time)
@@ -19,11 +19,20 @@ public class ColdDish extends Recipe
     {
         return chillTime;
     }
+    
+    public void setIsSet(boolean status)
+    {
+        this.isSet = status;
+    }
 
-    public void checkTexture()
+    public boolean checkTexture()
     {
         System.out.println("Checking consistency...");
-        this.isSet = true;
+        if(this.isSet == true)
+        {
+            return true;
+        }
+        return false;
     }
 
     @Override

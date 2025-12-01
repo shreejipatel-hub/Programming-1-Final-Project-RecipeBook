@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=Ingredient
-comment1.params=name\ amount\ unit
+comment1.params=name\ quantity\ unit
 comment1.target=Ingredient(java.lang.String,\ double,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getName()
 comment3.params=
-comment3.target=double\ getAmount()
+comment3.target=double\ getQuantity()
 comment4.params=
 comment4.target=java.lang.String\ getUnit()
 comment5.params=calories

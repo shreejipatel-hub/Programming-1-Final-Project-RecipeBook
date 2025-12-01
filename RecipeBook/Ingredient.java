@@ -1,14 +1,14 @@
 public class Ingredient
 {
     private String name;
-    private double amount;
+    private double quantity;
     private String unit;
     private int calories; // optional extra data
 
-    public Ingredient(String name, double amount, String unit)
+    public Ingredient(String name, double quantity, String unit)
     {
         this.name = name;
-        this.amount = amount;
+        this.quantity = quantity;
         this.unit = unit;
         this.calories = 0;
     }
@@ -18,9 +18,9 @@ public class Ingredient
         return name;
     }
 
-    public double getAmount()
+    public double getQuantity()
     {
-        return amount;
+        return quantity;
     }
 
     public String getUnit()
@@ -40,6 +40,6 @@ public class Ingredient
 
     public String toString()
     {
-        return amount + " " + unit + " " + name;
+        return quantity + " " + unit + " " + name;
     }
 }

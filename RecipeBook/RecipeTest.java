@@ -45,7 +45,31 @@ public class RecipeTest
         salad.addTag("Vegan");        
     }
     
+    @Test
+    public void testAttributes()
+    {
+        assertEquals("Chocolate Cake", cake.getName());
+        assertEquals(350.0, cake.getOvenTemp(), 0.1);
+        assertEquals(RecipeType.DESSERT, cake.getType());
+    }
     
+    @Test
+    public void testScaling()
+    {
+        //initial serving size is 1, flour is 1.0 cup
+        assertEquals(1.0, flour.getQuantity(), 0.01);
+        //scale to 4 servings
+        cake.setServingSize(4);
+        //flour should now be 4.0 cups
+        assertEquals(4.0, flour.getQuantity(), 0.01);
+    }
+    
+    @Test
+    public void testTags()
+    {
+        assertTrue(salad.hasTag("Vegan"));
+        assertFalse(salad.hasTag("Spicy"));
+    }
 
     /**
      * Tears down the test fixture.

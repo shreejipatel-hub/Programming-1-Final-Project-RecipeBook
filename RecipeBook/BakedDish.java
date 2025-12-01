@@ -19,6 +19,12 @@
     {
         this.ovenTemp = temp;
     }
+    
+    public double getOvenTemp()
+    {
+        return bakeTime;
+        
+    }
 
     public double getBakeTime()
     {
