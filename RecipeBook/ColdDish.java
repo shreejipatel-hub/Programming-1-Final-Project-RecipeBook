@@ -1,4 +1,4 @@
-public class ColdDish
+public class ColdDish extends Recipe
 {
     private double chillTime;
     private boolean isSet;
