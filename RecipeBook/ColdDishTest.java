@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class ColdDishTest
+public class ColdDishTest extends Recipe
 {
     private ColdDish pudding;
     /**
