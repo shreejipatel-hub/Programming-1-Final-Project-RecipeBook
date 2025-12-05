@@ -30,7 +30,7 @@ public abstract class Recipe
         //update all ingredients
         for(Ingredient i :  ingredients)
         {
-            //i.scale(factor);
+            i.scale(factor);
         }
     }
 
@@ -44,9 +44,9 @@ public abstract class Recipe
         return tags.contains(tag);
     }
 
-    public void addIngredient(Ingredient ingredient)
+    public void addIngredient(Ingredient i)
     {
-        ingredients.add(ingredient);
+        ingredients.add(i);
     }
 
     public ArrayList<Ingredient> getIngredients()
@@ -59,9 +59,19 @@ public abstract class Recipe
         steps.add(step);
     }
 
-    public void rate(double value)
+    public void rate(double stars)
     {
-        rating = value;
+        //checks if the rating is in a valid range
+        if(stars >= 0 && stars <= 5)
+        {
+          this.rating = stars;//update the rating if valid  
+        }
+        
+        else
+        {
+            //prints the rror if not in the valid range
+            System.out.println("Error: The rating must be in between 0-5.");
+        }
     }
 
     public double getRating()
@@ -83,6 +93,12 @@ public abstract class Recipe
     {
         return servingSize;
     }
-    // ABSTRACT
+    
+    @Override
+    public String toString()
+    {
+        return name + " ("+type+") - "+rating+"/5 stars";
+    }
+    // ABSTRACT method that forces the subclasses to define how to prepare
     public abstract void prepare();
 }

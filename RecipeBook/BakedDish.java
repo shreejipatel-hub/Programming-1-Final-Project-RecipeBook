@@ -2,12 +2,15 @@
 
  public class BakedDish extends Recipe
 {
+    //stores oven temperature
     private double ovenTemp;
+    //stores baking time
     private double bakeTime;
 
     public BakedDish(String name, RecipeType type)
     {
         super(name, type);
+        //sets the bake duration and the temperature to 0
         ovenTemp = 0;
         bakeTime = 0;
     }
@@ -25,26 +28,29 @@
     public double getOvenTemp()
     {
         return bakeTime;
-        
     }
 
     public double getBakeTime()
     {
         return bakeTime;
     }
-
+    
     @Override
     public void prepare()
     {
-        System.out.println("Preheating oven to " + ovenTemp);
-        System.out.println("Baking for " + bakeTime + " minutes.");
-        //print steps
-        int i = 2;
-        for(String s : steps)
+        System.out.println("-------Baking Instructions for "+name+" --------");
+        //starting with a specific step
+        System.out.println("1. Preheat oven to "+ ovenTemp +" degrees.");
+        //print the steps stored in the superclass
+        int stepNum = 2;
+        for(String step : steps)//looping through the steps arraylist from recipe
         {
-            System.out.println(i + ". "+s);
-            i++;
+            //print the step number and the instructions
+           System.out.println(stepNum + ". "+ step);
+           //incrementing the counter for next stap
+           stepNum++;
         }
-        System.out.println(i+ ". bake for "+ bakeTime + " minutes");
+        //ending with a specific step
+        System.out.println(". Bake for  "+ bakeTime +" minutes.");
     }
 }

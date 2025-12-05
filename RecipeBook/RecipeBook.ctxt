@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=RecipeBook
-comment1.params=author\ edition\ yearPublished
-comment1.target=RecipeBook(java.lang.String,\ java.lang.String,\ int)
+comment1.params=bookName\ author\ edition\ yearPublished
+comment1.target=RecipeBook(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
 comment2.params=r
 comment2.target=void\ addRecipe(Recipe)
 comment3.params=
@@ -12,4 +12,10 @@ comment5.params=
 comment5.target=Recipe\ getTopRated()
 comment6.params=
 comment6.target=void\ printBookDetails()
-numComments=7
+comment7.params=tag
+comment7.target=java.util.ArrayList\ searchByTag(java.lang.String)
+comment8.params=searchString
+comment8.target=java.util.ArrayList\ searchByTitle(java.lang.String)
+comment9.params=ingredientName
+comment9.target=java.util.ArrayList\ searchByIngredient(java.lang.String)
+numComments=10

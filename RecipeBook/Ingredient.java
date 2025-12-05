@@ -3,7 +3,7 @@ public class Ingredient
     private String name;
     private double quantity;
     private String unit;
-    private int calories; // optional extra data
+    private int calories; 
 
     public Ingredient(String name, double quantity, String unit)
     {
@@ -41,5 +41,10 @@ public class Ingredient
     public String toString()
     {
         return quantity + " " + unit + " " + name;
+    }
+    
+    public void scale(double factor)
+    {
+        this.quantity = this.quantity * factor;
     }
 }
