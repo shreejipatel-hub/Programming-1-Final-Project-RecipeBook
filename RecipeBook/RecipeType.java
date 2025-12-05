@@ -2,7 +2,7 @@
 {
     DESSERT,
     SOUP,
-    DINNER,
+    MAIN_COURSE,
     BREAKFAST,
     APPETIZER
 }

@@ -33,7 +33,7 @@ public class RecipeTest
     {
         //creating a baked dish
         cake = new BakedDish("Chocolate Cake", RecipeType.DESSERT);
-        cake.setOvenTemp(350);
+        cake.setOvenTemp(350.0);
         cake.setBakeTime(45);
         cake.addStep("Mix ingredients");
         //add a new ingredient

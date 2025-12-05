@@ -41,7 +41,7 @@ public class BakedDishTest
     {
         //test the getters and setters
         cake.setOvenTemp(350);
-        cake.setBakeTime(45);
+        cake.setBakeTime(45.0);
         
         assertEquals(45.0, cake.getBakeTime(), 0.01);
         assertEquals(350.0, cake.getOvenTemp(), 0.01);
