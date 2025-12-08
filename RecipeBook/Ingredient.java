@@ -45,6 +45,7 @@ public class Ingredient
     
     public void scale(double factor)
     {
+        //so if the quantity is 2 and factor is 0.5 new quantity is 1
         this.quantity = this.quantity * factor;
     }
 }
