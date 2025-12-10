@@ -52,8 +52,14 @@ public class MainMenu
             else if (choice == 8) {
                 // Top Rated
                 Recipe top = myBook.getTopRated();
-                if (top != null) System.out.println("\nTop Rated: " + top);
-                else System.out.println("No recipes found.");
+                if (top != null)
+                {
+                 System.out.println("\nTop Rated: " + top);   
+                }
+                else 
+                {
+                    System.out.println("No recipes found.");
+                }
             }
             else if (choice == 9) {
                 // Print Book Details
@@ -74,7 +80,6 @@ public class MainMenu
         }
     }
 
-    
 
     private static void printMenu() {
         System.out.println("\n=== RECIPE BOOK ===");
@@ -112,10 +117,22 @@ public class MainMenu
         System.out.println("Select Type: 1.DESSERT 2.SOUP 3.MAIN 4.BREAKFAST 5.APPETIZER");
         int typeIn = getIntInput("Choice: ");
         RecipeType type = RecipeType.MAIN_COURSE; // Default
-        if (typeIn == 1) type = RecipeType.DESSERT;
-        else if (typeIn == 2) type = RecipeType.SOUP;
-        else if (typeIn == 4) type = RecipeType.BREAKFAST;
-        else if (typeIn == 5) type = RecipeType.APPETIZER;
+        if (typeIn == 1) 
+        {
+            type = RecipeType.DESSERT;
+        }
+        else if (typeIn == 2)
+        {
+            type = RecipeType.SOUP;
+        }
+        else if (typeIn == 4) 
+        {
+            type = RecipeType.BREAKFAST;
+        }
+        else if (typeIn == 5) 
+        {
+            type = RecipeType.APPETIZER;
+        }
 
         // Select Category (Baked vs Cold) to decide which class to create
         System.out.println("Is this a (1) Baked Dish or (2) Cold Dish?");
@@ -137,35 +154,14 @@ public class MainMenu
 
         // Add Ingredients Loop
         System.out.println("--- Add Ingredients ---");
-        while(true) {
-            System.out.print("Add an ingredient? (y/n): ");
-            String ans = scanner.nextLine();
-            if (ans.equalsIgnoreCase("n")) break;
 
-            System.out.print("Name: ");
-            String iName = scanner.nextLine();
-            double qty = getDoubleInput("Quantity: ");
-            System.out.print("Unit (cups, grams, etc): ");
-            String unit = scanner.nextLine();
-
-            newRecipe.addIngredient(new Ingredient(iName, qty, unit));
-        }
 
         // Add Steps Loop
         System.out.println("--- Add Steps ---");
-        while(true) {
-            System.out.print("Add a step? (y/n): ");
-            String ans = scanner.nextLine();
-            if (ans.equalsIgnoreCase("n")) break;
-
-            System.out.print("Instruction: ");
-            newRecipe.addStep(scanner.nextLine());
-        }
+        
 
         // Add Tags
-        System.out.print("Enter a tag (or press enter to skip): ");
-        String tag = scanner.nextLine();
-        if(!tag.isEmpty()) newRecipe.addTag(tag);
+        
 
         book.addRecipe(newRecipe);
         System.out.println("Recipe added successfully!");
@@ -194,10 +190,22 @@ public class MainMenu
         System.out.println("1.DESSERT 2.SOUP 3.MAIN 4.BREAKFAST 5.APPETIZER");
         int typeIn = getIntInput("Choice: ");
         RecipeType type = RecipeType.MAIN_COURSE;
-        if (typeIn == 1) type = RecipeType.DESSERT;
-        else if (typeIn == 2) type = RecipeType.SOUP;
-        else if (typeIn == 4) type = RecipeType.BREAKFAST;
-        else if (typeIn == 5) type = RecipeType.APPETIZER;
+        if (typeIn == 1) 
+        {
+            type = RecipeType.DESSERT;
+        }
+        else if (typeIn == 2) 
+        {
+            type = RecipeType.SOUP;
+        }
+        else if (typeIn == 4) 
+        {
+            type = RecipeType.BREAKFAST;
+        }
+        else if (typeIn == 5) 
+        {
+            type = RecipeType.APPETIZER;
+        }
 
         ArrayList<Recipe> results = book.listByType(type);
         printRecipeList(results);
@@ -206,7 +214,10 @@ public class MainMenu
     private static void handlePrepare(RecipeBook book) {
         ArrayList<Recipe> all = book.listAllRecipes();
         printRecipeList(all);
-        if (all.isEmpty()) return;
+        if (all.isEmpty()) 
+        {
+            return;
+        }
 
         int idx = getIntInput("Select recipe number to prepare: ") - 1;
         if (idx >= 0 && idx < all.size()) {
@@ -218,7 +229,7 @@ public class MainMenu
                 System.out.println("- " + i.toString());
             }
             System.out.println("\nSteps:");
-            // This calls the abstract method you defined in BakedDish or ColdDish
+            // This calls the abstract method we defined in BakedDish or ColdDish
             r.prepare(); 
         } else {
             System.out.println("Invalid selection.");
@@ -228,29 +239,21 @@ public class MainMenu
     private static void handleScale(RecipeBook book) {
         ArrayList<Recipe> all = book.listAllRecipes();
         printRecipeList(all);
-        if (all.isEmpty()) return;
-
-        int idx = getIntInput("Select recipe number: ") - 1;
-        if (idx >= 0 && idx < all.size()) {
-            Recipe r = all.get(idx);
-            System.out.println("Current serving size: " + r.getServingSize());
-            int newSize = getIntInput("Enter new serving size: ");
-            
-            // This calls your method which calculates the factor and updates ingredients
-            r.setServingSize(newSize);
-            System.out.println("Recipe scaled! Ingredients updated.");
-            
-            // Show updated ingredients
-            for(Ingredient i : r.getIngredients()) {
-                System.out.println(i.toString());
-            }
+        if (all.isEmpty()) 
+        {
+            return;
         }
+
+      
     }
 
     private static void handleRate(RecipeBook book) {
         ArrayList<Recipe> all = book.listAllRecipes();
         printRecipeList(all);
-        if (all.isEmpty()) return;
+        if (all.isEmpty()) 
+        {
+            return;
+        }
 
         int idx = getIntInput("Select recipe number: ") - 1;
         if (idx >= 0 && idx < all.size()) {
@@ -260,7 +263,7 @@ public class MainMenu
         }
     }
 
-    // --- UTILS ---
+    
 
     private static int getIntInput(String prompt) {
         System.out.print(prompt);
@@ -285,7 +288,7 @@ public class MainMenu
     }
 
     private static void seedData(RecipeBook book) {
-        // Pre-load a Baked Dish
+        
         BakedDish cake = new BakedDish("Chocolate Cake", RecipeType.DESSERT);
         cake.setOvenTemp(350);
         cake.setBakeTime(45);
@@ -297,7 +300,7 @@ public class MainMenu
         cake.rate(4.5);
         book.addRecipe(cake);
 
-        // Pre-load a Cold Dish
+        
         ColdDish salad = new ColdDish("Greek Salad", RecipeType.APPETIZER);
         salad.setChillTime(0.5);
         salad.setIsSet(true);
