@@ -16,7 +16,9 @@ VERSION:version 1
 
 DATE:December 9 2025
 
-LISCENSE:© 2025 [Patel Shreeji & Yanda Badango Alan ]. All Rights Reserved.
+===========================================================================================
+
+LICENSE:© 2025 [Patel Shreeji & Yanda Badango Alan ]. All Rights Reserved.
 
 ===========================================================================================
 
