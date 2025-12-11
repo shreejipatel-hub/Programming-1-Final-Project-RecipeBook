@@ -8,7 +8,7 @@ public class MainMenu
     public static void main(String[] args) 
     {
         // 1. Initialize the RecipeBook
-        RecipeBook myBook = new RecipeBook("Grandma's Secrets", "Chief Chef", "1st Edition", 2025);
+        RecipeBook myBook = new RecipeBook("Grandma's Secrets", "Shreeji Patel", "1st Edition", 2025);
 
         // 2. Add some dummy data so you can test immediately
         seedData(myBook);
@@ -154,14 +154,47 @@ public class MainMenu
 
         // Add Ingredients Loop
         System.out.println("--- Add Ingredients ---");
+        while(true) 
+        {
+            System.out.print("Add an ingredient? (y/n): ");
+            String ans = scanner.nextLine();
+            if (ans.equalsIgnoreCase("n")) 
+            {
+                break;
+            }
 
+            System.out.print("Name: ");
+            String iName = scanner.nextLine();
+            double qty = getDoubleInput("Quantity: ");
+            System.out.print("Unit (cups, grams, etc): ");
+            String unit = scanner.nextLine();
+
+            newRecipe.addIngredient(new Ingredient(iName, qty, unit));
+        }
 
         // Add Steps Loop
         System.out.println("--- Add Steps ---");
+        while(true) 
+        {
+            System.out.print("Add a step? (y/n): ");
+            String ans = scanner.nextLine();
+            if (ans.equalsIgnoreCase("n")) 
+            {
+                break;
+            }
+
+            System.out.print("Instruction: ");
+            newRecipe.addStep(scanner.nextLine());
+        }
         
 
         // Add Tags
-        
+        System.out.print("Enter a tag (or press enter to skip): ");
+        String tag = scanner.nextLine();
+        if(!tag.isEmpty()) 
+        {
+          newRecipe.addTag(tag);  
+        }
 
         book.addRecipe(newRecipe);
         System.out.println("Recipe added successfully!");
